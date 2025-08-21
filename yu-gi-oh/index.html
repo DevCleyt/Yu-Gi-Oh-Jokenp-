@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yu-Gi-Oh! Jokenpô</title>
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Estilo -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Script -->
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <h1>Yu-Gi-Oh! <span>Jokenpô</span></h1>
+      <button id="btn-reset" class="btn" aria-label="Reiniciar partida">🔄 Reiniciar</button>
+    </header>
+
+    <section class="scoreboard" aria-label="Placar do jogo">
+      <div class="score">
+        <h2>Você</h2>
+        <output id="score-player" aria-live="polite">0</output>
+      </div>
+      <div class="score">
+        <h2>CPU</h2>
+        <output id="score-cpu" aria-live="polite">0</output>
+      </div>
+      <div class="round">
+        <h2>Rodada</h2>
+        <output id="round">1</output>
+      </div>
+    </section>
+
+    <section class="arena" aria-live="polite">
+      <div class="field field-player">
+        <h3>Sua carta</h3>
+        <img id="img-player" src="assets/src/icons/question.png" alt="Carta do jogador" />
+        <p class="pick" id="label-player">—</p>
+      </div>
+      <div class="versus">VS</div>
+      <div class="field field-cpu">
+        <h3>Carta da CPU</h3>
+        <img id="img-cpu" src="assets/src/icons/question.png" alt="Carta da CPU" />
+        <p class="pick" id="label-cpu">—</p>
+      </div>
+    </section>
+
+    <p class="result" id="result" aria-live="assertive">
+      Escolha sua carta para começar!
+    </p>
+
+    <section class="choices" aria-label="Escolhas de cartas">
+      <button class="card" data-card="dragao-branco">
+        <img src="assets/src/cards/dragon.png" alt="Dragão Branco (Pedra)" />
+        <span>Dragão Branco</span>
+      </button>
+      <button class="card" data-card="mago-negro">
+        <img src="assets/src/cards/magician.png" alt="Mago Negro (Papel)" />
+        <span>Mago Negro</span>
+      </button>
+      <button class="card" data-card="exodia">
+        <img src="assets/src/cards/exodia.png" alt="Exodia (Tesoura)" />
+        <span>Exodia</span>
+      </button>
+    </section>
+
+    <footer class="footer">
+      <p>Feito com ❤ para o desafio <strong>DIO</strong>. Assets: DIO.</p>
+    </footer>
+  </main>
+</body>
+</html>
